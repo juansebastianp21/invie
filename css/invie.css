@@ -1,3 +1,45 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?yfkb4a');
+    src:  url('../fonts/icomoon.eot?yfkb4a#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?yfkb4a') format('truetype'),
+      url('../fonts/icomoon.woff?yfkb4a') format('woff'),
+      url('../fonts/icomoon.svg?yfkb4a#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-phone:before {
+    content: "\e942";
+  }
+  .icon-envelop:before {
+    content: "\e945";
+  }
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+  .icon-close:before {
+    content: "\ea0d";
+  }
+  
+/* *********** BODY ***************** */
+
 body {
     font-family: 'Allerta', sans-serif;
     margin: 0;
@@ -202,6 +244,20 @@ table, td, th {
     border: 1px solid #273b47;
     border-collapse: collapse;
 }
+.burger-button {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #395667;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 3;
+    color: white;
+}
 
 @media screen and (max-width: 800px) {
     /* Portada */
@@ -247,11 +303,22 @@ table, td, th {
         padding: 0;
     }
     /* Guitarras */
+
+    /* Precios */
+    .tabla {
+        margin: 50px 20px;
+    }
+    .tabla .contenedor {
+        overflow: auto;
+        border: 1px solid #273b47;
+    }
+    /* Precios */
 }
 
 @media screen and (max-width: 650px) {
     .header {
         text-align: center;
+        padding: 10px 0;
     }
     .logotipo {
         margin: 0;
@@ -304,6 +371,34 @@ table, td, th {
 
 @media screen and (max-width: 500px) {
     /* Portada */
+    .portada .contenedor {
+        position: static;
+    }
+    .header {
+        position: static;
+    }
+    .header .contenedor {
+        position: static;
+    }
+    .menu {
+        background: rgba(255, 60, 88, 0.8);
+        position: absolute;
+        left: -100%;
+        top: 0;
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        transition: .3s;
+    }
+    .menu.active {
+        left: 0;
+    }
+    .menu ul {
+        flex: 1;
+    }
     .menu li {
         display: block;
         margin: 0;
